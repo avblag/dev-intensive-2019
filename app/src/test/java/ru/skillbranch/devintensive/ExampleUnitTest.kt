@@ -20,7 +20,7 @@ class ExampleUnitTest {
     fun test_task_1() {
         val user = User.makeUser("John Cena")
         print("$user \n")
-        val user2 = User.makeUser("John Wick")
+        val user2 = User.makeUser("")
         print("$user2 \n")
         val user3 = User.makeUser("John")
         print("$user3 \n")
@@ -28,7 +28,7 @@ class ExampleUnitTest {
 
 
     @Test
-    fun test_make_message () {
+    fun test_task2 () {
 
         val user = User.makeUser("John Dow")
         val chat = Chat("1")
