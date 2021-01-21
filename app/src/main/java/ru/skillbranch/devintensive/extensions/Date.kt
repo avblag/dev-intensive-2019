@@ -17,3 +17,19 @@ fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND): Date {
     }
     return date
 }
+
+fun Date.humanizeDiff(): String {
+    val timeDifference = this.time - Date().time
+    return when (timeDifference) {
+        in (0..1) -> "только что"
+        in (1..45) -> "несколько секунд назад"
+        in (45..75) -> "минуту назад"
+        in (75..45 * 60) -> "${timeDifference/60} минут назад"
+        in (45 * 60..75 * 60) -> "час назад"
+        in (75 * 60..22 * 3600) -> "${timeDifference/3600} часов назад"
+        in (22 * 60 * 60..26 * 3600) -> "день назад"
+        in (26 * 60 * 60..360 * 24 * 3600) -> "${timeDifference/(3600 * 24)} дней назад"
+        else -> "более года назад"
+    }
+}
+
