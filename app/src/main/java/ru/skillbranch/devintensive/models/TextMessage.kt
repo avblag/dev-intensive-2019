@@ -1,5 +1,6 @@
 package ru.skillbranch.devintensive.models
 
+import ru.skillbranch.devintensive.extensions.format
 import java.util.*
 
 class TextMessage (
@@ -12,6 +13,6 @@ class TextMessage (
     ) : BaseMessage(id, from, chat, isIncoming, date) {
         override fun formatMessage() : String {
             val action = if (isIncoming) "получил" else "отправил"
-            return "${from?.firstName} $action сообщение \"$text\" $date"
+            return "${from?.firstName} $action сообщение \"$text\" ${date.format()}"
         }
 }
