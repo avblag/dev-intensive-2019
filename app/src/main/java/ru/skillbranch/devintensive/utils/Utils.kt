@@ -17,4 +17,16 @@ object Utils {
         val lastName = ifEmptyThenNull(parts?.getOrNull(1))
         return firstName to lastName
     }
+
+    fun toInitials(firstName: String?, lastName: String?): String? {
+        val firstLetter = firstName?.first()
+        val lastLetter = lastName?.first()
+
+        return if ((firstLetter == null) && (lastLetter == null)) {
+            null
+        } else if ((firstLetter != null) && (lastLetter == null)) {
+            firstLetter.toString()
+        } else
+            firstLetter.toString() + lastLetter.toString()
+    }
 }
