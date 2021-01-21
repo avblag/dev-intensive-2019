@@ -7,6 +7,7 @@ import ru.skillbranch.devintensive.models.BaseMessage
 import ru.skillbranch.devintensive.models.Chat
 import ru.skillbranch.devintensive.models.TextMessage
 import ru.skillbranch.devintensive.models.User
+import ru.skillbranch.devintensive.utils.Utils
 import java.util.*
 
 /**
@@ -38,5 +39,13 @@ class ExampleUnitTest {
 
     }
 
+    @Test
+    fun test_task6 () {
+        print(Utils.toInitials("John", "Dow"))
+        print("\n")
+        print(Utils.toInitials("John", null))
+        print("\n")
+        print(Utils.toInitials(null, null))
+    }
 
 }
