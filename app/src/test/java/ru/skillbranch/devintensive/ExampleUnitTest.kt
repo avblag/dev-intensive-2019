@@ -48,4 +48,11 @@ class ExampleUnitTest {
         print(Utils.toInitials(null, null))
     }
 
+    @Test
+    fun test_task9 () {
+        val user = User.Builder().id("99").firstName("John").lastName("Silver").avatar(null).
+rating(0).respect(0).lastVisit(Date()).isOnline(false)
+        print ("${user.id} ${user.firstName} ${user.lastName}")
+    }
+
 }
