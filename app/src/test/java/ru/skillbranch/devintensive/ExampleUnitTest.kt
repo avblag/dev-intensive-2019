@@ -3,6 +3,7 @@ package ru.skillbranch.devintensive
 import org.junit.Test
 
 import org.junit.Assert.*
+import ru.skillbranch.devintensive.extensions.TimeUnits
 import ru.skillbranch.devintensive.models.BaseMessage
 import ru.skillbranch.devintensive.models.Chat
 import ru.skillbranch.devintensive.models.TextMessage
@@ -53,6 +54,12 @@ class ExampleUnitTest {
         val user = User.Builder().id("99").firstName("John").lastName("Silver").avatar(null).
 rating(0).respect(0).lastVisit(Date()).isOnline(false)
         print ("${user.id} ${user.firstName} ${user.lastName}")
+    }
+
+    @Test
+    fun test_task10 () {
+        print(TimeUnits.SECOND.plural(1))
+        print(TimeUnits.HOUR.plural(23))
     }
 
 }
