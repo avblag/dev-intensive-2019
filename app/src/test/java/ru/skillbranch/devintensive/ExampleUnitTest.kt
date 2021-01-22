@@ -4,6 +4,7 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import ru.skillbranch.devintensive.extensions.TimeUnits
+import ru.skillbranch.devintensive.extensions.truncate
 import ru.skillbranch.devintensive.models.BaseMessage
 import ru.skillbranch.devintensive.models.Chat
 import ru.skillbranch.devintensive.models.TextMessage
@@ -60,6 +61,15 @@ rating(0).respect(0).lastVisit(Date()).isOnline(false)
     fun test_task10 () {
         print(TimeUnits.SECOND.plural(1))
         print(TimeUnits.HOUR.plural(23))
+    }
+
+    @Test
+    fun test_task11() {
+        val str1 = "Bender Bending Rodriguez"
+        println(str1.truncate())
+        val str2 = "A"
+        println(str2.truncate())
+
     }
 
 }
