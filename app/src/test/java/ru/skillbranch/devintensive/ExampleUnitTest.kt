@@ -4,6 +4,7 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import ru.skillbranch.devintensive.extensions.TimeUnits
+import ru.skillbranch.devintensive.extensions.stripHtml
 import ru.skillbranch.devintensive.extensions.truncate
 import ru.skillbranch.devintensive.models.BaseMessage
 import ru.skillbranch.devintensive.models.Chat
@@ -70,6 +71,12 @@ rating(0).respect(0).lastVisit(Date()).isOnline(false)
         val str2 = "A"
         println(str2.truncate())
 
+    }
+
+    @Test
+    fun test_task12 () {
+        println("<p class=\\\"title\\\">Образовательное IT-сообщество Skill Branch</p>".stripHtml())
+        println("<p>Образовательное       IT-сообщество Skill Branch</p>".stripHtml())
     }
 
 }

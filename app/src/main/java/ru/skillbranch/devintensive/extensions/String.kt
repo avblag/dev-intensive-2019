@@ -7,3 +7,9 @@ fun String.truncate(length: Int = 16): String {
         return this.take(length) + ".."
     }
 }
+
+fun String.stripHtml(): String {
+        val htmlTags = Regex("(<.*?>)|(&[^ а-я]{1,4}?;)")
+        val spaces = Regex(" {2,}")
+        return this.replace(htmlTags, "").replace(spaces, " ")
+}
